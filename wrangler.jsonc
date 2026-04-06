@@ -58,11 +58,11 @@
   // R2 bucket for Sandbox SDK backup/restore (squashfs snapshots).
   // The binding name BACKUP_BUCKET is required by @cloudflare/sandbox.
   "r2_buckets": [
-    {
-      "binding": "BACKUP_BUCKET",
-      "bucket_name": "moltbot-data",
-    },
-  ],
+  {
+    "binding": "STORAGE",
+    "bucket_name": "openclaw-memory"
+  }
+],
 
   // Browser Rendering binding for CDP shim
   "browser": {
