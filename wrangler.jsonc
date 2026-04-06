@@ -58,11 +58,11 @@
   // R2 bucket for Sandbox SDK backup/restore (squashfs snapshots).
   // The binding name BACKUP_BUCKET is required by @cloudflare/sandbox.
   "r2_buckets": [
-  {
-    "binding": "STORAGE",
-    "bucket_name": "openclaw-memory"
-  }
-],
+    {
+      "binding": "STORAGE",
+      "bucket_name": "openclaw-memory"
+    }
+  ],
 
   // Browser Rendering binding for CDP shim
   "browser": {
@@ -76,6 +76,13 @@
   "triggers": {
     "crons": ["* * * * *"],
   },
+  
+  // Environment variables to route AI processing to Cloudflare's native models
+  "vars": {
+    "AI_PROVIDER": "cloudflare",
+    "AI_MODEL": "@cf/meta/llama-3.2-11b-vision-instruct"
+  },
+
   // Secrets to configure via `wrangler secret put`:
   //
   // AI Provider (at least one set required):
